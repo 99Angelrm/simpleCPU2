@@ -46,7 +46,7 @@ module controlunit (
 		else if (ld)
 			instruction_reg <= inst;
 	
-	always_comb newProgcntr <= progcntr+instruction_reg-1'b1;
+	always_comb newProgcntr <= progcntr+instruction_reg[7:0]-1'b1;
 	
 	
 	controllerfsm fsm (
@@ -71,6 +71,7 @@ module controlunit (
 								.RF_Rp_rd	(RF_Rp_rd),
 								.RF_Rq_addr	(RF_Rq_addr),
 								.RF_Rq_rd	(RF_Rq_rd),
+								.alu_s1     (alu_s1),
 								.alu_s0		(alu_s0)
 							);
 								

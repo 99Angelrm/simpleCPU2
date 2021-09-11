@@ -27,10 +27,10 @@ module datapath (
 //		always_comb muxout = RF_s ? DM_Din : alu_res;
 		always_comb begin
 			muxout = '0;
-			case({RF_s0,RF_s1})
+			case({RF_s1,RF_s0})
 				2'b00 : muxout = alu_res;
 				2'b01 : muxout = DM_Din;
-				2'b10 : muxout = RF_W_data;
+				2'b10 : muxout = {8'h00,RF_W_data};
 			endcase
 			
 		end

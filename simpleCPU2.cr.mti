@@ -13,26 +13,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	alu
 
-} {} {}} C:/Quartus/simpleCPU2/simplecpu_tb.sv {1 {vlog -work work -sv -stats=none C:/Quartus/simpleCPU2/simplecpu_tb.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module simplecpu_tb
-
-Top level modules:
-	simplecpu_tb
-
 } {} {}} C:/Quartus/simpleCPU2/datapath.sv {1 {vlog -work work -sv -stats=none C:/Quartus/simpleCPU2/datapath.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module datapath
 
 Top level modules:
 	datapath
-
-} {} {}} C:/Quartus/simpleCPU2/simplecpu2.sv {1 {vlog -work work -sv -stats=none C:/Quartus/simpleCPU2/simplecpu2.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module simplecpu2
-
-Top level modules:
-	simplecpu2
 
 } {} {}} C:/Quartus/simpleCPU2/rf.sv {1 {vlog -work work -sv -stats=none C:/Quartus/simpleCPU2/rf.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -41,12 +27,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	rf
 
-} {} {}} C:/Quartus/simpleCPU2/datamem.sv {1 {vlog -work work -sv -stats=none C:/Quartus/simpleCPU2/datamem.sv
+} {} {}} C:/Quartus/simpleCPU2/simplecpu2.sv {1 {vlog -work work -sv -stats=none C:/Quartus/simpleCPU2/simplecpu2.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module datamem
+-- Compiling module simplecpu2
 
 Top level modules:
-	datamem
+	simplecpu2
 
 } {} {}} C:/Quartus/simpleCPU2/controlunit.sv {1 {vlog -work work -sv -stats=none C:/Quartus/simpleCPU2/controlunit.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -61,5 +47,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	asyncmem
+
+} {} {}} C:/Quartus/simpleCPU2/datamem.sv {1 {vlog -work work -sv -stats=none C:/Quartus/simpleCPU2/datamem.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module datamem
+
+Top level modules:
+	datamem
 
 } {} {}}

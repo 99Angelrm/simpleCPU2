@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module simplecpu_tb;
+module simplecpu2_tb;
 
 	// Inputs
 	logic clk;
@@ -10,7 +10,7 @@ module simplecpu_tb;
 	logic [31:0] dmem [0:127];
 	logic [15:0] randdata;
 	// Instantiate the Unit Under Test (UUT)
-	simplecpu uut (
+	simplecpu2 uut (
 		.clk(clk), 
 		.rst(rst),
 		.pc(pc)
@@ -78,7 +78,7 @@ module simplecpu_tb;
 		logic 	[16:0] tb_regbank [16:0];	
 		logic	[15:0] tb_instruction;
 			
-			//  monitor para leer la instrucción
+			//  monitor para leer la instrucciï¿½n
 			if(uut.instmem.ren)
 				tb_instruction = uut.instmem.data_out;
 

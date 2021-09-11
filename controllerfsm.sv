@@ -165,4 +165,6 @@ module controllerfsm (
 	alu_s0 = (state == ADD);
 	end
 	
+	always_comb RF_W_data = instruction[7:0];
+	
 endmodule
