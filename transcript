@@ -1,0 +1,10 @@
+# Compile of alu.sv was successful.
+# Compile of asyncmem.sv was successful.
+# Compile of controllerfsm.sv was successful.
+# Compile of controlunit.sv was successful.
+# Compile of datamem.sv was successful.
+# Compile of datapath.sv was successful.
+# Compile of rf.sv was successful.
+# Compile of simplecpu_tb.sv was successful.
+# Compile of simplecpu2.sv was successful.
+# 9 compiles, 0 failed with no errors.
