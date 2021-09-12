@@ -34,7 +34,6 @@ module simplecpu2_tb;
 			randdata = $random();
 			uut.datamemory.mem_array[i] = {8'h0,randdata[7:0]};  
 			end
-		uut.datamemory.mem_array[0]=32'hFFFFFFFF;
 //***************SIMPLECPU TESTBENCH*************************
 //		uut.instmem.mem_array[0] = 16'h0005; // Load R0 D[5] = 8d = 141 
 //		uut.instmem.mem_array[1] = 16'h0106; // Load R1 D[6] = 65 = 101
@@ -109,10 +108,20 @@ module simplecpu2_tb;
 //		uut.instmem.mem_array[3] = 16'b0010000000000001;
 //		uut.instmem.mem_array[4] = 16'b0101001011111111;
 		
-//***************CODIGO ABS********************************* Checando el abs
-		uut.instmem.mem_array[0] = 16'b0000000100000000;
-		uut.instmem.mem_array[1] = 16'b0110000100000000;
+//***************CODIGO ABS********************************* Checando el abs -1 a 1 R1
+//		uut.datamemory.mem_array[0]=32'hFFFFFFFF;
+//		uut.instmem.mem_array[0] = 16'b0000000100000000;  //R1=D[0]
+//		uut.instmem.mem_array[1] = 16'b0110000100000000;  //R1=abs(R1)
+
+//***************CODIGO ABS********************************* Checando el abs -2 a 2 R1
+//		uut.datamemory.mem_array[0]=32'hFFFFFFFE;
+//		uut.instmem.mem_array[0] = 16'b0000000100000000;  //R1=D[0]
+//		uut.instmem.mem_array[1] = 16'b0110000100000000;  //R1=abs(R1)
 		
+//***************CODIGO ABS********************************* Checando el abs -2 a 2 R2
+		uut.datamemory.mem_array[0]=32'hFFFFFFFE;
+		uut.instmem.mem_array[0] = 16'b0000_0010_00000000;  //R2=D[0]
+		uut.instmem.mem_array[1] = 16'b0110_0010_00000000;  //R2=abs(R2)
 		#20000
 
 		for ( i=0 ; i<256 ;i = i + 1)begin
