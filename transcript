@@ -723,3 +723,43 @@ run
 # 
 # 
 run
+add wave -position end  sim:/simplecpu2_tb/uut/controller/instruction_reg
+add wave -position end  sim:/simplecpu2_tb/uut/controller/progcntr
+add wave -position end  sim:/simplecpu2_tb/uut/addr
+restart
+run
+# GetModuleFileName: No se puede encontrar el módulo especificado.
+# 
+# 
+run
+run
+# Compile of alu.sv was successful.
+# Compile of asyncmem.sv was successful.
+# Compile of controllerfsm.sv was successful.
+# Compile of controlunit.sv was successful.
+# Compile of datamem.sv was successful.
+# Compile of datapath.sv was successful.
+# Compile of rf.sv was successful.
+# Compile of simplecpu2.sv was successful.
+# Compile of simplecpu2_tb.sv was successful.
+# 9 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.simplecpu2_tb
+# Loading work.simplecpu2
+# Loading work.asyncmem
+# Loading work.controlunit
+# Loading work.controllerfsm_sv_unit
+# Loading work.controllerfsm
+# Loading work.datapath
+# Loading work.rf
+# Loading work.alu
+# Loading work.datamem
+run
+# GetModuleFileName: No se puede encontrar el módulo especificado.
+# 
+# 
+run
+run
+run
+run

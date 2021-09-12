@@ -46,7 +46,9 @@ module controlunit (
 		else if (ld)
 			instruction_reg <= inst;
 	
-	always_comb newProgcntr <= progcntr+instruction_reg[7:0]-1'b1;
+	always_comb begin
+	newProgcntr <= (instruction_reg[7]==1'b0) ? progcntr+instruction_reg[7:0]-1'b1 : progcntr+{8'hff,instruction_reg[7:0]}-1'b1 ;
+	end
 	
 	
 	controllerfsm fsm (
