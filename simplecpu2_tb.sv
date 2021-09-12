@@ -19,7 +19,7 @@ module simplecpu2_tb;
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-		rst = 1;
+		rst = 0;
 
 		// Wait 100 ns for global reset to finish
 		#11;
@@ -33,7 +33,8 @@ module simplecpu2_tb;
 		for ( i=0 ; i<256 ;i = i + 1) begin
 			randdata = $random();
 			uut.datamemory.mem_array[i] = {8'h0,randdata[7:0]};  
-			end	
+			end
+		uut.datamemory.mem_array[0]=32'hFFFFFFFF;
 //***************SIMPLECPU TESTBENCH*************************
 //		uut.instmem.mem_array[0] = 16'h0005; // Load R0 D[5] = 8d = 141 
 //		uut.instmem.mem_array[1] = 16'h0106; // Load R1 D[6] = 65 = 101
@@ -102,13 +103,15 @@ module simplecpu2_tb;
 //		uut.instmem.mem_array[7] = 16'b0010000000000001;
 //		uut.instmem.mem_array[8] = 16'b0001000000001001;
 //***************CODIGO 2********************************* INFINITE LOOP +1
-		uut.instmem.mem_array[0] = 16'b0011000000000000;
-		uut.instmem.mem_array[1] = 16'b0011000100000001;
-		uut.instmem.mem_array[2] = 16'b0011001000000000;
-		uut.instmem.mem_array[3] = 16'b0010000000000001;
-		uut.instmem.mem_array[4] = 16'b0101001011111111;
+//		uut.instmem.mem_array[0] = 16'b0011000000000000;
+//		uut.instmem.mem_array[1] = 16'b0011000100000001;
+//		uut.instmem.mem_array[2] = 16'b0011001000000000;
+//		uut.instmem.mem_array[3] = 16'b0010000000000001;
+//		uut.instmem.mem_array[4] = 16'b0101001011111111;
 		
-
+//***************CODIGO ABS********************************* Checando el abs
+		uut.instmem.mem_array[0] = 16'b0000000100000000;
+		uut.instmem.mem_array[1] = 16'b0110000100000000;
 		
 		#20000
 
