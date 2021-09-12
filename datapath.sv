@@ -22,6 +22,7 @@ module datapath (
 	//logic [15:0]	Rp_data;  // Already declared in the Module Output Pin port 
 	logic [15:0]	Rq_data;
 	logic [15:0]	alu_res;
+	logic [15:0]   abs_data;
 	
 		// MUX Behavioral Description
 //		always_comb muxout = RF_s ? DM_Din : alu_res;
@@ -31,6 +32,7 @@ module datapath (
 				2'b00 : muxout = alu_res;
 				2'b01 : muxout = DM_Din;
 				2'b10 : muxout = {8'h00,RF_W_data};
+				2'b11 : muxout = abs_data;
 			endcase
 			
 		end
@@ -61,6 +63,11 @@ module datapath (
 		.s0(alu_s0),
 		.OUT(alu_res)
 		);
+	
+	absolute ABS (
+		.register_data(Rp_data),
+		.abs_data(abs_data)
+	);
 
 
 endmodule

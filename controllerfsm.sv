@@ -10,6 +10,7 @@ typedef enum logic [3:0]
 	SUBSTRACT        = 4'b0111,
 	JUMP_IF_ZERO     = 4'b1000,
 	JUMP_IF_ZERO_JMP = 4'b1001,
+	ABS				  = 4'b1010,
 	ERROR		        = 4'bxXXX
 
 } t_cntrl_fsm_state;
@@ -64,6 +65,7 @@ module controllerfsm (
 								4'h3 : nxtstate = LOAD_CONST;
 								4'h4 : nxtstate = SUBSTRACT;
 								4'h5 : nxtstate = JUMP_IF_ZERO;
+								4'h6 : nxtstate = ABS;
 								default : nxtstate = ERROR;
 							endcase
 						  end
@@ -72,6 +74,7 @@ module controllerfsm (
 				ADD              : nxtstate = FETCH;
 				LOAD_CONST       : nxtstate = FETCH;
 				SUBSTRACT        : nxtstate = FETCH;
+				ABS				  : nxtstate = FETCH;
 				JUMP_IF_ZERO     : nxtstate = RF_Rp_zero ? JUMP_IF_ZERO_JMP : FETCH;
 				JUMP_IF_ZERO_JMP : nxtstate = FETCH;
 				default : nxtstate = INIT;
@@ -157,6 +160,15 @@ module controllerfsm (
 									RF_Rp_addr	= instruction[11:8];  // ra
 									RF_Rp_rd		= 1'b1;
 								end
+			ABS          :    begin
+									RF_Rp_addr 	= instruction[11:8];	 // rb
+									RF_s1		  	= 1'b1;
+									RF_s0       = 1'b1;
+									RF_Rp_rd	  	= 1'b1;
+									RF_W_addr	= instruction[11:8];	 // ra
+									RF_W_wr		= 1'b1;
+								end
+									
 		endcase			
 	end
 	
